@@ -58,18 +58,20 @@ Hosted via GitHub Pages. Push to `main` branch, then enable Pages in repo Settin
 - [x] Google Maps embed on real address
 - [x] All 14 photos wired (gallery + slideshow)
 - [x] Mobile-responsive (verified — viewport, media queries, hamburger nav, touch swipe, tel: links)
-- [x] All 5 language versions have hreflang in head + sitemap
-- [x] **Real pricing live** (2026-05-09) — replaced "examples" placeholders with 990/5500/14000 kr
-- [x] **Swedish (/sv/) pricing updated** to match EN
+- [x] **Six** language versions: EN / SV / FR / DE / PL / RO — all with hreflang + sitemap
+- [x] **Real pricing live** (2026-05-09) — replaced "examples" placeholders with 990/5500/14000 kr in EN, SV, DE, PL, RO
+- [x] **French (/fr/) language version added** (2026-05-09) — full translation, new pricing card, hreflang/og:locale on all sister pages
 - [x] **Hero copy updated** with "lowest rates in Öjebyn" + 990 kr signal
 
 ### Open / pending Tony's manual action
 - [ ] **GSC + Bing Webmaster verification** — see SEO_NEXT_STEPS.md (highest leverage right now — site not yet indexed)
 - [ ] **Google Business Profile finish** — take exterior photo, upload, complete profile (postcard verification ~5-10 days)
 - [ ] **Free directory backlinks** — email Visit Pite, Swedish Lapland, pitea.se, Bothnian Coastal Route (~30 min, big SEO win)
-- [ ] **Translate price changes to /de/, /pl/, /ro/** — same pattern as EN/SV (Tony or future Jarvis pass)
 - [ ] **Test on phone** — actual mobile booking flow not yet verified
-- [ ] **Doushka review** — confirm she's happy with 990/5500/14000 pricing (decided autonomously based on competitor data)
+
+### Decisions confirmed (2026-05-09)
+- [x] **Pricing** — 990 kr/5,500 kr/14,000 kr confirmed by Tony AND Doushka 2026-05-09
+- [x] **DE/PL/RO/FR translations** — same new pricing structure live across all language versions
 
 ### Decision deferred
 - [ ] **OTA listings (Booking.com / Airbnb)** — see OTA_DISTRIBUTION_ANALYSIS.md. Recommendation: hold for Months 1-3, list Month 4 if direct-book volume insufficient.
