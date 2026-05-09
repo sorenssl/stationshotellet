@@ -1079,6 +1079,147 @@
             }
             .receipt-actions, .receipt-status { display: none; }
         }
+    
+        /* Reviews section */
+        #reviews {
+            background: var(--color-warm);
+            padding: 5rem 0;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .review-card {
+            background: var(--color-card);
+            padding: 1.6rem;
+            border-radius: 10px;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+        }
+        .review-stars {
+            color: var(--color-accent);
+            letter-spacing: 0.18em;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+        .review-text {
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--color-text);
+            margin: 0 0 1rem;
+            font-size: 0.93rem;
+            flex-grow: 1;
+        }
+        .review-meta {
+            font-size: 0.82rem;
+            color: var(--color-muted);
+            margin: 0;
+            padding-top: 0.7rem;
+            border-top: 1px solid var(--color-border);
+        }
+        .reviews-footer {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+        .reviews-footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .reviews-footer a:hover {
+            color: var(--color-accent-hover);
+            text-decoration: underline;
+        }
+    
+        /* Amenities section */
+        #amenities {
+            background: var(--color-bg);
+            padding: 5rem 0;
+        }
+        .amenities-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .amenity-highlight {
+            background: var(--color-card);
+            padding: 1.4rem 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--color-border);
+            text-align: center;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .amenity-highlight:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .amenity-highlight-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .amenity-highlight-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--color-heading);
+            line-height: 1.35;
+        }
+        .amenities-details {
+            margin-top: 1rem;
+            border-top: 1px solid var(--color-border);
+            padding-top: 1.5rem;
+        }
+        .amenities-details > summary {
+            cursor: pointer;
+            color: var(--color-accent);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            list-style: none;
+            text-align: center;
+        }
+        .amenities-details > summary::-webkit-details-marker { display: none; }
+        .amenities-details > summary:hover { color: var(--color-accent-hover); }
+        .amenities-details[open] > summary { margin-bottom: 1.5rem; }
+        .amenities-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem 2rem;
+        }
+        .amenity-category h4 {
+            font-size: 1rem;
+            color: var(--color-heading);
+            margin: 0 0 0.7rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .amenity-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .amenity-category li {
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+            color: var(--color-text);
+            line-height: 1.45;
+        }
+        .amenity-category li::before {
+            content: "\2713";
+            color: var(--color-accent);
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -1245,6 +1386,167 @@
 </section>
 
 <!-- Prices -->
+<!-- Amenities -->
+<section id="amenities">
+    <div class="section-inner">
+        <span class="section-label">Udogodnienia</span>
+        <h2 class="section-title">Co oferuje to miejsce</h2>
+        <p class="section-subtitle">Wszystko, czego potrzebujesz na komfortowy pobyt &mdash; potwierdzone przez 63 go&#347;ci na Airbnb.</p>
+        <div class="amenities-highlights">
+            <div class="amenity-highlight">
+                <span class="amenity-highlight-icon">&#128246;</span>
+                <div class="amenity-highlight-title">Szybkie Wi-Fi 75&nbsp;Mbps</div>
+            </div>
+            <div class="amenity-highlight">
+                <span class="amenity-highlight-icon">&#128663;</span>
+                <div class="amenity-highlight-title">Bezp&#322;atny parking</div>
+            </div>
+            <div class="amenity-highlight">
+                <span class="amenity-highlight-icon">&#128273;</span>
+                <div class="amenity-highlight-title">Samodzielne zameldowanie (skrytka)</div>
+            </div>
+            <div class="amenity-highlight">
+                <span class="amenity-highlight-icon">&#127869;</span>
+                <div class="amenity-highlight-title">Pe&#322;na kuchnia &amp; zmywarka</div>
+            </div>
+            <div class="amenity-highlight">
+                <span class="amenity-highlight-icon">&#129516;</span>
+                <div class="amenity-highlight-title">Pralka &amp; suszarka</div>
+            </div>
+            <div class="amenity-highlight">
+                <span class="amenity-highlight-icon">&#10052;</span>
+                <div class="amenity-highlight-title">Klimatyzacja &amp; ogrzewanie</div>
+            </div>
+            <div class="amenity-highlight">
+                <span class="amenity-highlight-icon">&#128188;</span>
+                <div class="amenity-highlight-title">Miejsce do pracy</div>
+            </div>
+            <div class="amenity-highlight">
+                <span class="amenity-highlight-icon">&#128197;</span>
+                <div class="amenity-highlight-title">Pobyty d&#322;ugoterminowe mile widziane</div>
+            </div>
+        </div>
+        <details class="amenities-details">
+            <summary>Poka&#380; wszystkie 53 udogodnie&#324; &darr;</summary>
+            <div class="amenities-categories">
+            <div class="amenity-category">
+                <h4><span>&#128703;</span>&#321;azienka</h4>
+                <ul>
+                    <li>Suszarka do w&#322;os&oacute;w</li>
+                    <li>&#346;rodki czysto&#347;ci</li>
+                    <li>Szampon</li>
+                    <li>Mydeko do cia&#322;a</li>
+                    <li>Gor&#261;ca woda</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#128719;</span>Sypialnia &amp; pranie</h4>
+                <ul>
+                    <li>Pralka (w mieszkaniu)</li>
+                    <li>Suszarka</li>
+                    <li>Podstawowe &mdash; r&#281;czniki, po&#347;ciel, myd&#322;o, papier toaletowy</li>
+                    <li>Wieszaki</li>
+                    <li>Po&#347;ciel</li>
+                    <li>Po&#347;ciel bawe&#322;niana</li>
+                    <li>Dodatkowe poduszki i koce</li>
+                    <li>Zas&#322;ony zaciemniaj&#261;ce</li>
+                    <li>&#379;elazko</li>
+                    <li>Suszarka na pranie</li>
+                    <li>Sejf</li>
+                    <li>Przechowywanie: szafa i garderoba</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#128250;</span>Rozrywka</h4>
+                <ul>
+                    <li>Po&#322;&#261;czenie Ethernet</li>
+                    <li>Telewizor</li>
+                    <li>Konsola do gier: PlayStation 3</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#128118;</span>Rodzina</h4>
+                <ul>
+                    <li>Zabezpieczenia okien</li>
+                    <li>Os&#322;ony gniazdek</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#10052;</span>Ogrzewanie &amp; klimatyzacja</h4>
+                <ul>
+                    <li>Klimatyzacja</li>
+                    <li>Ogrzewanie</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#128737;</span>Bezpiecze&#324;stwo</h4>
+                <ul>
+                    <li>Zewn&#281;trzne kamery bezpiecze&#324;stwa</li>
+                    <li>Kamery zewn&#281;trzne &mdash; parking i przyjazdy</li>
+                    <li>Czujnik dymu</li>
+                    <li>Ga&#347;nica</li>
+                    <li>Apteczka pierwszej pomocy</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#128241;</span>Internet &amp; praca</h4>
+                <ul>
+                    <li>Szybkie Wi-Fi 75&nbsp;Mbps &mdash; zweryfikowane, 4K i rozmowy wideo</li>
+                    <li>Miejsce do pracy (we wsp&oacute;lnej przestrzeni)</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#127869;</span>Kuchnia &amp; jadalnia</h4>
+                <ul>
+                    <li>Kuchnia &mdash; gotuj samodzielnie</li>
+                    <li>Lod&oacute;wka Electrolux</li>
+                    <li>Mikrofal&oacute;wka</li>
+                    <li>Podstawy kuchenne &mdash; garnki, patelnie, olej, s&oacute;l, pieprz</li>
+                    <li>Naczynia &amp; sztu&#263;ce &mdash; miski, pa&#322;eczki, talerze, kubki</li>
+                    <li>Zamra&#380;arka</li>
+                    <li>Zmywarka</li>
+                    <li>Kuchenka</li>
+                    <li>Piekarnik Electrolux</li>
+                    <li>Czajnik</li>
+                    <li>Ekspres przelewowy</li>
+                    <li>Kieliszki do wina</li>
+                    <li>Toster</li>
+                    <li>Maszynka do ry&#380;u</li>
+                    <li>St&oacute;&#322; jadalniany</li>
+                    <li>Kawa</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#128205;</span>Lokalizacja</h4>
+                <ul>
+                    <li>Prywatne wej&#347;cie &mdash; oddzielna ulica lub wej&#347;cie do budynku</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#127795;</span>Na zewn&#261;trz</h4>
+                <ul>
+                    <li>Wsp&oacute;lny taras lub balkon</li>
+                    <li>Meble ogrodowe</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#128663;</span>Parking</h4>
+                <ul>
+                    <li>Bezp&#322;atny parking</li>
+                </ul>
+            </div>
+            <div class="amenity-category">
+                <h4><span>&#128296;</span>Us&#322;ugi</h4>
+                <ul>
+                    <li>Pobyty d&#322;ugoterminowe dozwolone (28 dni lub wi&#281;cej)</li>
+                    <li>Samodzielne zameldowanie ze skrytk&#261;</li>
+                </ul>
+            </div>
+            </div>
+        </details>
+    </div>
+</section>
+
 <section id="prices">
     <div class="section-inner">
         <span class="section-label">Ceny</span>
@@ -1357,6 +1659,20 @@
                     </div>
                 </div>
                 <div class="booking-detail">
+                    <span class="booking-detail-icon">&#128273;</span>
+                    <div class="booking-detail-text">
+                        <strong>Samodzielne zameldowanie</strong>
+                        <span>Skrytka z kluczem przy drzwiach &mdash; przyjed&#378; o dowolnej porze. Kod wysy&#322;any e-mailem przed przyjazdem.</span>
+                    </div>
+                </div>
+                <div class="booking-detail">
+                    <span class="booking-detail-icon">&#128172;</span>
+                    <div class="booking-detail-text">
+                        <strong>J&#281;zyki</strong>
+                        <span>Du&#324;ski, angielski, francuski, norweski, szwedzki.</span>
+                    </div>
+                </div>
+                <div class="booking-detail">
                     <span class="booking-detail-icon">&#128179;</span>
                     <div class="booking-detail-text">
                         <strong>Płatność</strong>
@@ -1383,6 +1699,50 @@
 </section>
 
 <!-- Location -->
+<!-- Guest reviews -->
+<section id="reviews">
+    <div class="section-inner">
+        <span class="section-label">Opinie go&#347;ci</span>
+        <h2 class="section-title">Co m&oacute;wi&#261; nasi go&#347;cie</h2>
+        <p class="section-subtitle">&#9733;&#9733;&#9733;&#9733;&#9733; 63 opinie na Airbnb &mdash; ka&#380;dy pobyt z 5 gwiazdkami.</p>
+        <div class="reviews-grid">
+            <article class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">&ldquo;Incredibly nice accommodation, you can tell that they have spent time making it comfortable, clean and homey. The kitchen was super and well-equipped, the bathroom spacious and clean, the bedrooms were cleaned and very comfortable bed. Helpful and nice hosts. Would definitely stay here again.&rdquo;</p>
+                <p class="review-meta">&mdash; Amanda &middot; 09/2025 &middot; Zweryfikowany pobyt Airbnb</p>
+            </article>
+            <article class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">&ldquo;Soren &amp; Doushka&rsquo;s place was one of the cleanest, most well maintained and well cared for apartments. The place looked exactly like the pictures. The bed was large and comfortable. Soren and Doushka kindly invited us for a traditional Swedish Fika one evening. We started off as hosts and guests but ended up as new friends in an evening full of laughter and connection. Will definitely return to their place when in Pite&aring; next!&rdquo;</p>
+                <p class="review-meta">&mdash; Deepthi &middot; 12/2024 &middot; Zweryfikowany pobyt Airbnb</p>
+            </article>
+            <article class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">&ldquo;Wir wollten zum Jahreswechsel ein paar ruhige Tage im skandinavischen Winter verbringen &mdash; au&szlig;en sehr kalt und innen warm und gem&uuml;tlich. Genauso war es! Das Apartment von Doushka und S&ouml;ren war sehr gro&szlig;, perfekt eingerichtet und kuschelig warm. Die Wohnung liegt sehr ruhig, aber die n&auml;chsten Superm&auml;rkte sind zu Fu&szlig; erreichbar. Wir k&ouml;nnen diese Wohnung sehr empfehlen f&uuml;r einen entspannten Urlaub!&rdquo;</p>
+                <p class="review-meta">&mdash; Andreas &middot; 01/2025 &middot; Zweryfikowany pobyt Airbnb</p>
+            </article>
+            <article class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">&ldquo;Felt like home in a safe, quiet area. Highly recommended, excellent hosts, would like to stay here again soon.&rdquo;</p>
+                <p class="review-meta">&mdash; John &middot; 08/2025 &middot; Zweryfikowany pobyt Airbnb</p>
+            </article>
+            <article class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">&ldquo;Cozy, clean accommodation with the right location for the purpose. Recommended, we will certainly come back.&rdquo;</p>
+                <p class="review-meta">&mdash; Pernilla &middot; 08/2025 &middot; Zweryfikowany pobyt Airbnb</p>
+            </article>
+            <article class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">&ldquo;Amazing hosts. The apartment was so cozy and nice. Very clean and extra plus with air conditioning. We felt at home and would be happy to come back.&rdquo;</p>
+                <p class="review-meta">&mdash; Biret &middot; 07/2025 &middot; Zweryfikowany pobyt Airbnb</p>
+            </article>
+        </div>
+        <p class="reviews-footer">
+            <a class="outbound" href="https://www.airbnb.com/h/big-apartment-free-parking-6-beds-host-soren-doushka" target="_blank" rel="noopener">Przeczytaj wszystkie 63 opinie na Airbnb &rarr;</a>
+        </p>
+    </div>
+</section>
+
 <section id="location">
     <div class="section-inner">
         <span class="section-label">Lokalizacja</span>
