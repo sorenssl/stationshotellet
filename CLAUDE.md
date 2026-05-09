@@ -62,6 +62,7 @@ Hosted via GitHub Pages. Push to `main` branch, then enable Pages in repo Settin
 - [x] **Real pricing live** (2026-05-09) — replaced "examples" placeholders with 990/5500/14000 kr in EN, SV, DE, PL, RO
 - [x] **French (/fr/) language version added** (2026-05-09) — full translation, new pricing card, hreflang/og:locale on all sister pages
 - [x] **Hero copy updated** with "lowest rates in Öjebyn" + 990 kr signal
+- [x] **Image optimization (2026-05-09)**: WebP versions of all 28 images generated alongside JPEGs. Every `<img>` wrapped in `<picture>` with WebP source + JPEG fallback. Hero CSS uses `image-set()`. hosts.png (434 KB) replaced by hosts.jpg + hosts.webp (27 KB WebP, 49 KB JPEG fallback). **First-paint weight: 658 KB → 146 KB (78% reduction)**. Full gallery: 1.18 MB → 525 KB (55%). Helper scripts: `optimize_images.py`, `update_picture_tags.py`.
 
 ### Open / pending Tony's manual action
 - [ ] **GSC + Bing Webmaster verification** — see SEO_NEXT_STEPS.md (highest leverage right now — site not yet indexed)
