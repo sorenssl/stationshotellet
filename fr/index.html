@@ -580,12 +580,14 @@
         .local-card .card-meta {
             font-size: 0.82rem; color: var(--color-muted); font-style: italic;
         }
-        .local-card a.outbound {
+        .local-card a.outbound,
+        .location-card a.outbound {
             display: inline-block; margin-top: 0.3rem;
             color: var(--color-accent); text-decoration: none;
             font-size: 0.88rem; font-weight: 500;
         }
-        .local-card a.outbound:hover {
+        .local-card a.outbound:hover,
+        .location-card a.outbound:hover {
             text-decoration: underline; color: var(--color-accent-hover);
         }
 
@@ -1305,6 +1307,8 @@
             <div class="location-card">
                 <h4>&#9992; Aéroport le plus proche</h4>
                 <p>Aéroport de Luleå (LLA), env. 50 km</p>
+                <p style="margin-top:0.5rem; font-size:0.88rem;">Vols directs depuis Stockholm. Location de voiture à l'aéroport : Avis, Budget, Europcar, Hertz, Mabi, National, Sixt.</p>
+                <p style="margin-top:0.4rem;"><a class="outbound" href="https://www.swedavia.com/lulea/" target="_blank" rel="noopener">swedavia.com/lulea →</a><br><a class="outbound" href="https://www.swedavia.com/lulea/carrental/" target="_blank" rel="noopener">location voiture à LLA →</a></p>
             </div>
             <div class="location-card">
                 <h4>&#128652; En voiture</h4>

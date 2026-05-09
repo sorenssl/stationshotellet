@@ -580,12 +580,14 @@
         .local-card .card-meta {
             font-size: 0.82rem; color: var(--color-muted); font-style: italic;
         }
-        .local-card a.outbound {
+        .local-card a.outbound,
+        .location-card a.outbound {
             display: inline-block; margin-top: 0.3rem;
             color: var(--color-accent); text-decoration: none;
             font-size: 0.88rem; font-weight: 500;
         }
-        .local-card a.outbound:hover {
+        .local-card a.outbound:hover,
+        .location-card a.outbound:hover {
             text-decoration: underline; color: var(--color-accent-hover);
         }
 
@@ -1304,6 +1306,8 @@
             <div class="location-card">
                 <h4>&#9992; Närmaste flygplats</h4>
                 <p>Luleå flygplats (LLA), ca 50 km</p>
+                <p style="margin-top:0.5rem; font-size:0.88rem;">Direktflyg från Stockholm. Biluthyrning på flygplatsen: Avis, Budget, Europcar, Hertz, Mabi, National, Sixt.</p>
+                <p style="margin-top:0.4rem;"><a class="outbound" href="https://www.swedavia.se/lulea/" target="_blank" rel="noopener">swedavia.se/lulea →</a><br><a class="outbound" href="https://www.swedavia.com/lulea/carrental/" target="_blank" rel="noopener">biluthyrning på LLA →</a></p>
             </div>
             <div class="location-card">
                 <h4>&#128652; Med bil</h4>
