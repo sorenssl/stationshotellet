@@ -540,6 +540,14 @@
             opacity: 0.85;
         }
 
+        .price-eur {
+            color: var(--color-muted);
+            font-size: 0.82rem;
+            margin-top: 0.15rem;
+            opacity: 0.85;
+            min-height: 1em;
+        }
+
         /* --- Local guide cards --- */
         .local-grid {
             display: grid;
@@ -1164,6 +1172,7 @@
                 <h3>Par nuit</h3>
                 <div class="price-amount">990 kr</div>
                 <div class="price-unit">par nuit, tout l'appartement</div>
+                <div class="price-eur" data-sek="990">≈ €<span class="eur-amount">…</span></div>
                 <ul class="price-features">
                     <li>&#10003; Appartement complet, jusqu'à 5 personnes</li>
                     <li>&#10003; Ménage &amp; linge inclus</li>
@@ -1176,6 +1185,7 @@
                 <h3>Par semaine</h3>
                 <div class="price-amount">5 500 kr</div>
                 <div class="price-unit">par semaine (786 kr/nuit)</div>
+                <div class="price-eur" data-sek="5500">≈ €<span class="eur-amount">…</span></div>
                 <ul class="price-features">
                     <li>&#10003; Tout ce qui est inclus dans le tarif nuit</li>
                     <li>&#10003; Économisez 21% par rapport au tarif nuit</li>
@@ -1188,6 +1198,7 @@
                 <h3>Par mois</h3>
                 <div class="price-amount">14 000 kr</div>
                 <div class="price-unit">par mois (467 kr/nuit)</div>
+                <div class="price-eur" data-sek="14000">≈ €<span class="eur-amount">…</span></div>
                 <ul class="price-features">
                     <li>&#10003; Tout ce qui est inclus dans le tarif nuit</li>
                     <li>&#10003; Économisez 53% par rapport au tarif nuit</li>
@@ -1262,7 +1273,7 @@
                     <span class="booking-detail-icon">&#128179;</span>
                     <div class="booking-detail-text">
                         <strong>Paiement</strong>
-                        <span>Swish : 070-671 81 85 &middot; PayPal accepté</span>
+                        <span>Swish : 070-671 81 85 &middot; PayPal &middot; Espèces (SEK ou EUR) acceptés</span>
                     </div>
                 </div>
                 <div class="booking-detail">
@@ -1597,7 +1608,58 @@
     });
 </script>
 
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "56268582f31646be956658d1aaefaab9"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "56268582f31646be956658d1aaefaab9"}'>
+    /* --- Live SEK → EUR conversion (free ECB-sourced rate via frankfurter.app) --- */
+    (function updateEurPrices() {
+        var els = document.querySelectorAll('.price-eur');
+        if (!els.length) return;
+
+        var CACHE_KEY = 'sh_sek_eur_v1';
+        var CACHE_TTL_MS = 3600 * 1000;  // 1 hour
+        var rate = null;
+
+        try {
+            var cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+            if (cached && (Date.now() - cached.t) < CACHE_TTL_MS && cached.r > 0) {
+                rate = cached.r;
+            }
+        } catch (e) { /* ignore */ }
+
+        function paint(r) {
+            els.forEach(function(el) {
+                var sek = parseFloat(el.getAttribute('data-sek'));
+                var span = el.querySelector('.eur-amount');
+                if (!isNaN(sek) && span) {
+                    span.textContent = Math.round(sek * r);
+                }
+            });
+        }
+
+        if (rate) {
+            paint(rate);
+            return;
+        }
+
+        fetch('https://api.frankfurter.app/latest?from=SEK&to=EUR', { cache: 'no-store' })
+            .then(function(r) { return r.ok ? r.json() : null; })
+            .then(function(data) {
+                if (data && data.rates && data.rates.EUR) {
+                    var r = data.rates.EUR;
+                    try {
+                        localStorage.setItem(CACHE_KEY, JSON.stringify({ r: r, t: Date.now() }));
+                    } catch (e) { /* ignore quota errors */ }
+                    paint(r);
+                } else {
+                    // API returned but no rate — hide EUR displays
+                    els.forEach(function(el) { el.style.display = 'none'; });
+                }
+            })
+            .catch(function() {
+                // Network/CORS failure — hide EUR displays silently
+                els.forEach(function(el) { el.style.display = 'none'; });
+            });
+    })();
+</script><!-- End Cloudflare Web Analytics -->
 
 </body>
 </html>
