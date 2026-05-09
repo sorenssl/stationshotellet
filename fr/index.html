@@ -998,6 +998,87 @@
                 background: rgba(0, 0, 0, 0.5);
             }
         }
+    
+        /* --- Booking receipt overlay --- */
+        .booking-receipt {
+            position: fixed; inset: 0; z-index: 1000;
+            background: rgba(26, 21, 13, 0.7);
+            display: flex; align-items: flex-start; justify-content: center;
+            padding: 2rem 1rem; overflow-y: auto;
+        }
+        .booking-receipt[hidden] { display: none; }
+        .receipt-card {
+            background: var(--color-card);
+            border-radius: 8px;
+            max-width: 600px; width: 100%;
+            padding: 2rem 2rem 1.5rem; margin-top: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .receipt-header { text-align: center; margin-bottom: 1.2rem; }
+        .receipt-header h2 {
+            color: var(--color-heading);
+            font-size: 1.4rem; margin-bottom: 0.3rem;
+        }
+        .receipt-subtitle {
+            color: var(--color-muted); font-size: 0.95rem;
+        }
+        .receipt-property {
+            background: var(--color-warm);
+            border-left: 3px solid var(--color-accent);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+        .receipt-fields {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+        .receipt-fields dt {
+            color: var(--color-muted);
+            font-weight: 500;
+        }
+        .receipt-fields dd {
+            color: var(--color-text);
+            word-break: break-word;
+        }
+        .receipt-status {
+            text-align: center;
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
+            font-size: 0.92rem;
+            margin-bottom: 1.25rem;
+        }
+        .receipt-status-pending { background: #f5ede0; color: var(--color-muted); }
+        .receipt-status-sent    { background: #e6f3e6; color: #2d6e2d; }
+        .receipt-status-failed  { background: #fbeaea; color: #a23b3b; }
+        .receipt-note {
+            font-size: 0.88rem;
+            color: var(--color-text);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem 1rem;
+            background: var(--color-warm);
+            border-radius: 4px;
+        }
+        .receipt-actions {
+            display: flex; gap: 0.75rem;
+            flex-wrap: wrap; justify-content: center;
+        }
+        @media print {
+            body > *:not(#booking-receipt) { display: none !important; }
+            .booking-receipt {
+                position: static; background: white; padding: 0;
+            }
+            .receipt-card {
+                box-shadow: none; max-width: none;
+                margin: 0; padding: 1rem;
+            }
+            .receipt-actions, .receipt-status { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -1227,6 +1308,11 @@
                     <label for="name">Nom et prénom</label>
                     <input type="text" id="name" name="name" required placeholder="Votre nom">
                 </div>
+                <div class="form-group">
+                    <label for="business">Nom d'entreprise (facultatif)</label>
+                    <input type="text" id="business" name="business" placeholder="Nom de la société (le cas échéant)">
+                </div>
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;visibility:hidden" aria-hidden="true">
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" required placeholder="votre@email.com">
@@ -1671,7 +1757,138 @@
     })();
 </script>
 
+
+<script>
+    /* --- Booking-form receipt overlay (XSS-safe via textContent) --- */
+    (function() {
+        var form = document.querySelector('form.form-grid');
+        var overlay = document.getElementById('booking-receipt');
+        if (!form || !overlay) return;
+
+        var fieldsDl = overlay.querySelector('#receipt-fields');
+        var statusEl = overlay.querySelector('#receipt-status');
+        var closeBtn = overlay.querySelector('.receipt-close-btn');
+        var statusPendingText = statusEl.textContent;
+        var statusSentText = statusEl.getAttribute('data-sent') || '';
+        var statusFailText = statusEl.getAttribute('data-failed') || '';
+
+        function getLabel(inputId) {
+            var lbl = form.querySelector('label[for="' + inputId + '"]');
+            return lbl ? lbl.textContent.trim() : inputId;
+        }
+
+        function appendRow(label, value) {
+            var dt = document.createElement('dt');
+            dt.textContent = label;          // SAFE: textContent
+            var dd = document.createElement('dd');
+            dd.textContent = value;          // SAFE: textContent — XSS-protected
+            fieldsDl.appendChild(dt);
+            fieldsDl.appendChild(dd);
+        }
+
+        function calcNights(ci, co) {
+            if (!ci || !co) return 0;
+            var d1 = new Date(ci);
+            var d2 = new Date(co);
+            if (isNaN(d1) || isNaN(d2)) return 0;
+            var n = Math.round((d2 - d1) / 86400000);
+            return n > 0 ? n : 0;
+        }
+
+        function buildReceipt(fd) {
+            // Clear any previous receipt content
+            while (fieldsDl.firstChild) fieldsDl.removeChild(fieldsDl.firstChild);
+            // Field order matches form, business inserted after name
+            var order = [
+                ['name', null],
+                ['business', null],
+                ['email', null],
+                ['phone', null],
+                ['guests', null],
+                ['checkin', null],
+                ['checkout', null],
+                ['message', null]
+            ];
+            order.forEach(function(pair) {
+                var key = pair[0];
+                var val = (fd.get(key) || '').toString().trim();
+                if (!val) return;
+                appendRow(getLabel(key), val);
+            });
+            // Computed: # nights
+            var n = calcNights(fd.get('checkin'), fd.get('checkout'));
+            if (n > 0) {
+                var nightsLabel = overlay.getAttribute('data-nights-label') || 'Nights';
+                appendRow(nightsLabel, String(n));
+            }
+        }
+
+        form.addEventListener('submit', function(ev) {
+            // Honeypot check — bots fill _gotcha; humans never see it
+            var honey = form.querySelector('[name="_gotcha"]');
+            if (honey && honey.value) {
+                // Silently let the submission go through to Formspree (which
+                // also has spam filtering); just don't show our overlay.
+                return;
+            }
+            ev.preventDefault();
+            var fd = new FormData(form);
+            buildReceipt(fd);
+            statusEl.textContent = statusPendingText;
+            statusEl.className = 'receipt-status receipt-status-pending';
+            overlay.hidden = false;
+
+            // Submit to Formspree via AJAX
+            fetch(form.action, {
+                method: 'POST',
+                body: fd,
+                headers: { 'Accept': 'application/json' }
+            }).then(function(r) {
+                if (r.ok) {
+                    statusEl.textContent = statusSentText;
+                    statusEl.className = 'receipt-status receipt-status-sent';
+                    form.reset();
+                } else {
+                    statusEl.textContent = statusFailText;
+                    statusEl.className = 'receipt-status receipt-status-failed';
+                }
+            }).catch(function() {
+                statusEl.textContent = statusFailText;
+                statusEl.className = 'receipt-status receipt-status-failed';
+            });
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                overlay.hidden = true;
+            });
+        }
+    })();
+</script>
+
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "56268582f31646be956658d1aaefaab9"}'></script><!-- End Cloudflare Web Analytics -->
+
+
+<!-- Booking receipt overlay (built by JS on form submit) -->
+<div id="booking-receipt" data-nights-label="Nuits" class="booking-receipt" hidden role="dialog" aria-modal="true" aria-labelledby="receipt-title">
+    <div class="receipt-card">
+        <div class="receipt-header">
+            <h2 id="receipt-title">Demande de réservation reçue</h2>
+            <p class="receipt-subtitle">Merci. Voici une copie de ce que vous avez soumis.</p>
+        </div>
+        <div class="receipt-property">
+            <strong>Stations Hotellet</strong><br>
+            Västra Järnvägsgatan 5, 943 31 Öjebyn, Suède
+        </div>
+        <dl id="receipt-fields" class="receipt-fields"></dl>
+        <p id="receipt-status" data-sent="✓ Demande envoyée — nous confirmerons par e-mail sous 24 heures" data-failed="⚠️ Échec de l'envoi — contactez posetivemind67@gmail.com ou appelez Sören 070-671 81 85" class="receipt-status receipt-status-pending">Envoi…</p>
+        <p class="receipt-note">Ceci est une <strong>demande</strong> de réservation, pas une réservation confirmée. Nous répondrons sous 24 heures pour confirmer la disponibilité et organiser le paiement. Sauvegardez cette page ou imprimez-la pour vos archives.</p>
+        <div class="receipt-actions">
+            <button type="button" class="btn" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+            <button type="button" class="btn btn-outline receipt-close-btn">Fermer</button>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
