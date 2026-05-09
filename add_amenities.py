@@ -603,7 +603,7 @@ NEW_CSS = """
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem 2rem;
         }
-        .amenity-category h4 {
+        .amenity-category h3 {
             font-size: 1rem;
             color: var(--color-heading);
             margin: 0 0 0.7rem;
@@ -651,7 +651,7 @@ def build_section(t: dict) -> str:
         )
         cats_html_parts.append(
             f'            <div class="amenity-category">\n'
-            f'                <h4><span>{c["icon"]}</span>{t[c["key"]]}</h4>\n'
+            f'                <h3><span>{c["icon"]}</span>{t[c["key"]]}</h3>\n'
             f'                <ul>\n{items_html}\n                </ul>\n'
             f'            </div>'
         )

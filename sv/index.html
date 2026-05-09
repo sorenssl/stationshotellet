@@ -85,8 +85,8 @@
             --color-bg: #faf7f2;
             --color-text: #2c2416;
             --color-heading: #1a150d;
-            --color-accent: #b8860b;
-            --color-accent-hover: #9a7209;
+            --color-accent: #7d5e08;
+            --color-accent-hover: #5e4806;
             --color-dark: #2c2416;
             --color-warm: #f5ede0;
             --color-card: #ffffff;
@@ -1194,7 +1194,7 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem 2rem;
         }
-        .amenity-category h4 {
+        .amenity-category h3 {
             font-size: 1rem;
             color: var(--color-heading);
             margin: 0 0 0.7rem;
@@ -1247,6 +1247,8 @@
         </ul>
     </div>
 </nav>
+
+<main>
 
 <!-- Hero -->
 <section class="hero" id="home" onclick="openSlideshow(0)" style="cursor:pointer;">
@@ -1431,7 +1433,7 @@
             <summary>Visa alla 53 bekv&auml;mligheter &darr;</summary>
             <div class="amenities-categories">
             <div class="amenity-category">
-                <h4><span>&#128703;</span>Badrum</h4>
+                <h3><span>&#128703;</span>Badrum</h3>
                 <ul>
                     <li>H&aring;rtork</li>
                     <li>Rengöringsprodukter</li>
@@ -1441,7 +1443,7 @@
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#128719;</span>Sovrum &amp; tv&auml;tt</h4>
+                <h3><span>&#128719;</span>Sovrum &amp; tv&auml;tt</h3>
                 <ul>
                     <li>Tv&auml;ttmaskin (i l&auml;genheten)</li>
                     <li>Torktumlare</li>
@@ -1458,7 +1460,7 @@
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#128250;</span>Underh&aring;llning</h4>
+                <h3><span>&#128250;</span>Underh&aring;llning</h3>
                 <ul>
                     <li>Ethernet-anslutning</li>
                     <li>TV</li>
@@ -1466,21 +1468,21 @@
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#128118;</span>Familj</h4>
+                <h3><span>&#128118;</span>Familj</h3>
                 <ul>
                     <li>F&ouml;nstersp&auml;rrar</li>
                     <li>Eluttagsskydd</li>
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#10052;</span>Uppv&auml;rmning &amp; kyla</h4>
+                <h3><span>&#10052;</span>Uppv&auml;rmning &amp; kyla</h3>
                 <ul>
                     <li>Luftkonditionering</li>
                     <li>Uppv&auml;rmning</li>
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#128737;</span>S&auml;kerhet</h4>
+                <h3><span>&#128737;</span>S&auml;kerhet</h3>
                 <ul>
                     <li>Utomhus&ouml;vervakningskameror</li>
                     <li>Utomhuswebbkameror &mdash; parkering och ankomster</li>
@@ -1490,14 +1492,14 @@
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#128241;</span>Internet &amp; arbete</h4>
+                <h3><span>&#128241;</span>Internet &amp; arbete</h3>
                 <ul>
                     <li>Snabbt Wi-Fi 75&nbsp;Mbps &mdash; verifierat, str&ouml;mma 4K och videosamtal</li>
                     <li>Dedikerad arbetsplats (i ett gemensamt utrymme)</li>
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#127869;</span>K&ouml;k &amp; matsal</h4>
+                <h3><span>&#127869;</span>K&ouml;k &amp; matsal</h3>
                 <ul>
                     <li>K&ouml;k &mdash; laga din egen mat</li>
                     <li>Electrolux kylsk&aring;p</li>
@@ -1518,26 +1520,26 @@
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#128205;</span>Plats</h4>
+                <h3><span>&#128205;</span>Plats</h3>
                 <ul>
                     <li>Privat ing&aring;ng &mdash; separat gata eller byggnadsing&aring;ng</li>
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#127795;</span>Utomhus</h4>
+                <h3><span>&#127795;</span>Utomhus</h3>
                 <ul>
                     <li>Delad uteplats eller balkong</li>
                     <li>Utem&ouml;bler</li>
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#128663;</span>Parkering</h4>
+                <h3><span>&#128663;</span>Parkering</h3>
                 <ul>
                     <li>Gratis parkering p&aring; plats</li>
                 </ul>
             </div>
             <div class="amenity-category">
-                <h4><span>&#128296;</span>Tj&auml;nster</h4>
+                <h3><span>&#128296;</span>Tj&auml;nster</h3>
                 <ul>
                     <li>L&aring;ngtidsuthyrning till&aring;ten (28 dagar eller mer)</li>
                     <li>Sj&auml;lvincheckning med nyckelsk&aring;p</li>
@@ -1751,17 +1753,17 @@
         <p class="section-subtitle">Västra Järnvägsgatan 5, Öjebyn, 943 31 — strax utanför Piteå i norra Sverige.</p>
         <div class="location-cards">
             <div class="location-card">
-                <h4>&#9992; Närmaste flygplats</h4>
+                <h3>&#9992; Närmaste flygplats</h3>
                 <p>Luleå flygplats (LLA), ca 50 km</p>
                 <p style="margin-top:0.5rem; font-size:0.88rem;">Direktflyg från Stockholm. Biluthyrning på flygplatsen: Avis, Budget, Europcar, Hertz, Mabi, National, Sixt.</p>
                 <p style="margin-top:0.4rem;"><a class="outbound" href="https://www.swedavia.se/lulea/" target="_blank" rel="noopener">swedavia.se/lulea →</a><br><a class="outbound" href="https://www.swedavia.com/lulea/carrental/" target="_blank" rel="noopener">biluthyrning på LLA →</a></p>
             </div>
             <div class="location-card">
-                <h4>&#128652; Med bil</h4>
+                <h3>&#128652; Med bil</h3>
                 <p>Lättillgängligt från E4. Gratis parkering på plats.</p>
             </div>
             <div class="location-card">
-                <h4>&#127961; Piteå centrum</h4>
+                <h3>&#127961; Piteå centrum</h3>
                 <p>Endast 5 minuter med bil till centrala Piteå.</p>
             </div>
         </div>
@@ -1936,6 +1938,8 @@
 </section>
 
 <!-- Footer -->
+</main>
+
 <footer>
     <p>&copy; 2026 Stations Hotellet &middot; Västra Järnvägsgatan 5, Öjebyn, 943 31, Sverige</p>
     <p style="margin-top: 0.5rem;">Värdade av Doushka &amp; Sören Stenvall</p>
