@@ -540,6 +540,47 @@
             opacity: 0.85;
         }
 
+        /* --- Local guide cards --- */
+        .local-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+        .local-card {
+            background: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.25rem 1.4rem;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .local-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 36, 22, 0.08);
+            border-color: var(--color-accent);
+        }
+        .local-icon { font-size: 1.8rem; margin-bottom: 0.5rem; line-height: 1; }
+        .local-card h3 {
+            color: var(--color-heading); font-size: 1.05rem;
+            font-weight: 600; margin-bottom: 0.4rem;
+        }
+        .local-card p {
+            font-size: 0.93rem; color: var(--color-text);
+            margin-bottom: 0.4rem; line-height: 1.5;
+        }
+        .local-card p:last-child { margin-bottom: 0; }
+        .local-card .card-meta {
+            font-size: 0.82rem; color: var(--color-muted); font-style: italic;
+        }
+        .local-card a.outbound {
+            display: inline-block; margin-top: 0.3rem;
+            color: var(--color-accent); text-decoration: none;
+            font-size: 0.88rem; font-weight: 500;
+        }
+        .local-card a.outbound:hover {
+            text-decoration: underline; color: var(--color-accent-hover);
+        }
+
         /* --- Booking Form --- */
         .booking-section {
             background: var(--color-dark);
@@ -1270,6 +1311,100 @@
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Stations Hotellet location on Google Maps">
             </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Ce să faci -->
+<section id="experiences">
+    <div class="section-inner">
+        <span class="section-label">Ghid local</span>
+        <h2 class="section-title">Ce să faci aproape de Stations Hotellet</h2>
+        <p class="section-subtitle">Nordul Suediei oferă mai multe decât v-ați aștepta — iată ce e prin apropiere.</p>
+        <div class="local-grid">
+            <div class="local-card">
+                <div class="local-icon">🏖️</div>
+                <h3>Pite Havsbad</h3>
+                <p>Cea mai mare stațiune balneară din Suedia, ~5 km de noi. Parc acvatic, plajă cu nisip alb, activități estivale pentru toți.</p>
+                <a class="outbound" href="https://pitehavsbad.se" target="_blank" rel="noopener">pitehavsbad.se →</a>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🌌</div>
+                <h3>Aurora boreală</h3>
+                <p>Septembrie până în martie. Cerul limpede și întunecat din Öjebyn oferă vedere excelentă — uneori chiar de la prag.</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">☀️</div>
+                <h3>Soarele de la miezul nopții</h3>
+                <p>Iunie până în iulie. 24 de ore de lumină — perfect pentru drumeții de seară, pescuit târziu și apusuri fără sfârșit.</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🏘️</div>
+                <h3>Centrul vechi al Piteå</h3>
+                <p>5 minute cu mașina. Arhitectură fermecătoare din lemn, cafenele lângă râu, biserica istorică Piteå.</p>
+                <a class="outbound" href="https://www.visitpitea.se" target="_blank" rel="noopener">visitpitea.se →</a>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">⚡</div>
+                <h3>Parcul eolian Markbygden</h3>
+                <p>30 km nord — unul dintre cele mai mari parcuri eoliene terestre din Europa. Tururi disponibile cu ghid.</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🐕</div>
+                <h3>Sanie cu câini &amp; snowmobile</h3>
+                <p>Decembrie până în aprilie. Tururi husky, safariuri cu snowmobile, pescuit pe gheață — experiența completă a Laponiei.</p>
+                <a class="outbound" href="https://www.swedishlapland.com/pitea/" target="_blank" rel="noopener">swedishlapland.com →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Informații practice -->
+<section id="practical">
+    <div class="section-inner">
+        <span class="section-label">Informații practice</span>
+        <h2 class="section-title">Prima ta zi în Öjebyn</h2>
+        <p class="section-subtitle">Unde găsești cumpărături, alcool, combustibil, mâncare și o bere când ai nevoie.</p>
+        <div class="local-grid">
+            <div class="local-card">
+                <div class="local-icon">🛒</div>
+                <h3>Cumpărături — Öjebyn</h3>
+                <p><strong>ICA Supermarket Öjebyn</strong> — Öjagatan 35 (4,2★, 449 recenzii)<br>
+                <strong>Coop Öjebyn</strong> — Öjagatan</p>
+                <p class="card-meta">La distanță de mers pe jos de Stations Hotellet</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🛒</div>
+                <h3>Magazin mai mare (5 km)</h3>
+                <p><strong>Stora Coop Piteå</strong> — centru Piteå. Selecție mai largă dacă ICA Öjebyn nu are ce căutați.</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🍷</div>
+                <h3>Alcool — Systembolaget</h3>
+                <p><strong>Storgatan 65, Piteå</strong> (~5 km). Monopolul de stat suedez al alcoolului — singurul loc pentru băuturi peste 3,5%.</p>
+                <p class="card-meta">Lun–Mie 10–18 · Joi 10–19 · Vin 10–18 · Sâm 10–15 · Dum închis</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">⛽</div>
+                <h3>Combustibil — Öjebyn</h3>
+                <p><strong>Preem</strong> — Turbovägen 9, Öjebyn — <strong>non-stop</strong> (perfect pentru sosiri târzii)<br>
+                <strong>OKQ8</strong> — Gammelstadsvägen 21, Öjebyn</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🍕</div>
+                <h3>Mâncare în Öjebyn</h3>
+                <p><strong>Kifas Pizzeria &amp; Grillbar</strong> — Granvägen 2A, cu terasă<br>
+                <strong>Pit Stop</strong> — pizza, grătar, prânzul zilei<br>
+                <strong>SOS Pizzeria</strong> — comandă online</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🍺</div>
+                <h3>Puburi &amp; baruri în Piteå</h3>
+                <p><strong>The Bishops Arms</strong> — 200 beri la sticlă, 30 la halbă, whisky single malt<br>
+                <strong>Kalles Krog</strong> — pub &amp; club istoric<br>
+                <strong>BarBar</strong> — gin &amp; cocktailuri<br>
+                <strong>Centrum Krog</strong>, <strong>Territory54</strong> (steakhouse), <strong>Ångbryggeriet</strong> (bucătărie Norrbotten), <strong>Pensionatet</strong></p>
+            </div>
         </div>
     </div>
 </section>

@@ -540,6 +540,47 @@
             opacity: 0.85;
         }
 
+        /* --- Local guide cards --- */
+        .local-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+        .local-card {
+            background: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.25rem 1.4rem;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .local-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 36, 22, 0.08);
+            border-color: var(--color-accent);
+        }
+        .local-icon { font-size: 1.8rem; margin-bottom: 0.5rem; line-height: 1; }
+        .local-card h3 {
+            color: var(--color-heading); font-size: 1.05rem;
+            font-weight: 600; margin-bottom: 0.4rem;
+        }
+        .local-card p {
+            font-size: 0.93rem; color: var(--color-text);
+            margin-bottom: 0.4rem; line-height: 1.5;
+        }
+        .local-card p:last-child { margin-bottom: 0; }
+        .local-card .card-meta {
+            font-size: 0.82rem; color: var(--color-muted); font-style: italic;
+        }
+        .local-card a.outbound {
+            display: inline-block; margin-top: 0.3rem;
+            color: var(--color-accent); text-decoration: none;
+            font-size: 0.88rem; font-weight: 500;
+        }
+        .local-card a.outbound:hover {
+            text-decoration: underline; color: var(--color-accent-hover);
+        }
+
         /* --- Booking Form --- */
         .booking-section {
             background: var(--color-dark);
@@ -1271,6 +1312,100 @@
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Emplacement de Stations Hotellet sur Google Maps">
             </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- À faire -->
+<section id="experiences">
+    <div class="section-inner">
+        <span class="section-label">Guide local</span>
+        <h2 class="section-title">À faire près de Stations Hotellet</h2>
+        <p class="section-subtitle">Le nord de la Suède a plus à offrir qu'on ne le pense — voici ce qu'il y a tout près.</p>
+        <div class="local-grid">
+            <div class="local-card">
+                <div class="local-icon">🏖️</div>
+                <h3>Pite Havsbad</h3>
+                <p>La plus grande station balnéaire de Suède, ~5 km. Parc aquatique, plage de sable blanc, activités estivales pour tous.</p>
+                <a class="outbound" href="https://pitehavsbad.se" target="_blank" rel="noopener">pitehavsbad.se →</a>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🌌</div>
+                <h3>Aurores boréales</h3>
+                <p>De septembre à mars. Le ciel clair et sombre d'Öjebyn offre une excellente vue — parfois depuis votre porte.</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">☀️</div>
+                <h3>Soleil de minuit</h3>
+                <p>De juin à juillet. 24 h de jour — parfait pour les randonnées du soir, la pêche tardive et des couchers de soleil sans fin.</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🏘️</div>
+                <h3>Vieille ville de Piteå</h3>
+                <p>5 min en voiture. Architecture en bois charmante, cafés au bord du fleuve, l'église historique de Piteå.</p>
+                <a class="outbound" href="https://www.visitpitea.se" target="_blank" rel="noopener">visitpitea.se →</a>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">⚡</div>
+                <h3>Parc éolien de Markbygden</h3>
+                <p>30 km au nord — un des plus grands parcs éoliens onshore d'Europe. Visites guidées disponibles.</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🐕</div>
+                <h3>Traîneau à chiens &amp; motoneige</h3>
+                <p>De décembre à avril. Excursions husky, safaris en motoneige, pêche sur glace — l'expérience laponne complète.</p>
+                <a class="outbound" href="https://www.swedishlapland.com/pitea/" target="_blank" rel="noopener">swedishlapland.com →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Infos pratiques -->
+<section id="practical">
+    <div class="section-inner">
+        <span class="section-label">Infos pratiques</span>
+        <h2 class="section-title">Votre premier jour à Öjebyn</h2>
+        <p class="section-subtitle">Où trouver les courses, l'alcool, le carburant, à manger et un verre quand vous en avez besoin.</p>
+        <div class="local-grid">
+            <div class="local-card">
+                <div class="local-icon">🛒</div>
+                <h3>Courses — Öjebyn</h3>
+                <p><strong>ICA Supermarket Öjebyn</strong> — Öjagatan 35 (4,2★, 449 avis)<br>
+                <strong>Coop Öjebyn</strong> — Öjagatan</p>
+                <p class="card-meta">À distance de marche de Stations Hotellet</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🛒</div>
+                <h3>Plus grande épicerie (5 km)</h3>
+                <p><strong>Stora Coop Piteå</strong> — centre de Piteå. Sélection plus large si ICA Öjebyn n'a pas ce que vous cherchez.</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🍷</div>
+                <h3>Alcool — Systembolaget</h3>
+                <p><strong>Storgatan 65, Piteå</strong> (~5 km). Le monopole d'État suédois — seul endroit pour acheter des boissons à plus de 3,5 %.</p>
+                <p class="card-meta">Lun–Mer 10–18 · Jeu 10–19 · Ven 10–18 · Sam 10–15 · Dim fermé</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">⛽</div>
+                <h3>Carburant — Öjebyn</h3>
+                <p><strong>Preem</strong> — Turbovägen 9, Öjebyn — <strong>service 24 h</strong> (parfait pour les arrivées tardives)<br>
+                <strong>OKQ8</strong> — Gammelstadsvägen 21, Öjebyn</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🍕</div>
+                <h3>Manger à Öjebyn</h3>
+                <p><strong>Kifas Pizzeria &amp; Grillbar</strong> — Granvägen 2A, terrasse extérieure<br>
+                <strong>Pit Stop</strong> — pizza, grill, plat du jour<br>
+                <strong>SOS Pizzeria</strong> — commande en ligne</p>
+            </div>
+            <div class="local-card">
+                <div class="local-icon">🍺</div>
+                <h3>Pubs &amp; bars à Piteå</h3>
+                <p><strong>The Bishops Arms</strong> — 200 bières en bouteille, 30 à la pression, whisky single malt<br>
+                <strong>Kalles Krog</strong> — pub &amp; club historique<br>
+                <strong>BarBar</strong> — gin &amp; cocktails<br>
+                <strong>Centrum Krog</strong>, <strong>Territory54</strong> (steakhouse), <strong>Ångbryggeriet</strong> (cuisine du Norrbotten), <strong>Pensionatet</strong></p>
+            </div>
         </div>
     </div>
 </section>
