@@ -1789,6 +1789,9 @@
 
         var CACHE_KEY = 'sh_sek_eur_v1';
         var CACHE_TTL_MS = 3600 * 1000;  // 1 hour
+        // EUR cash service margin: covers bank's SEK conversion spread (~1.5-3%)
+        // plus a small service buffer. Tune this to taste — 0.04 = 4%.
+        var EUR_MARGIN = 0.04;
         var rate = null;
 
         try {
@@ -1803,7 +1806,9 @@
                 var sek = parseFloat(el.getAttribute('data-sek'));
                 var span = el.querySelector('.eur-amount');
                 if (!isNaN(sek) && span) {
-                    span.textContent = Math.round(sek * r);
+                    // Apply service margin so EUR cash payment covers Tony's
+                    // SEK conversion costs at the bank.
+                    span.textContent = Math.round(sek * r * (1 + EUR_MARGIN));
                 }
             });
         }
