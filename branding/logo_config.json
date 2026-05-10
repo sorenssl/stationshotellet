@@ -1,0 +1,26 @@
+{
+  "site_name": "Stations Hotellet",
+  "initials": "SH",
+  "wordmark": "Stations Hotellet",
+  "subtitle": "Ö J E B Y N   ·   S V E R I G E",
+  "colors": {
+    "background": "#faf7f2",
+    "accent":     "#7d5e08",
+    "text":       "#1a150d"
+  },
+  "fonts": {
+    "monogram": "georgiab.ttf",
+    "wordmark": "georgiab.ttf",
+    "subtitle": "georgia.ttf"
+  },
+  "output_dir": "logos",
+  "output_sizes": {
+    "full": [720, 512, 256],
+    "mark": [720, 256, 128, 64]
+  },
+  "_notes": {
+    "reuse": "For a new site, copy this file (e.g. logo_config_othersite.json), edit the values, and run: python logo_generator.py --config logo_config_othersite.json",
+    "fonts": "Filenames are searched in C:/Windows/Fonts/. Common Windows fonts: arial.ttf, arialbd.ttf, calibri.ttf, calibrib.ttf, georgia.ttf, georgiab.ttf, times.ttf, timesbd.ttf",
+    "colors": "Use #RRGGBB hex strings or [r, g, b] arrays. Both supported."
+  }
+}
