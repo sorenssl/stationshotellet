@@ -1,0 +1,53 @@
+timestamp_utc,keyword,tier,category,lang,provider,rank,found_url,note
+2026-05-10T07:17:46Z,Stations Hotellet,1,brand,sv,duckduckgo,-1,,ddg-checked-12-results
+2026-05-10T07:17:49Z,Stations Hotellet Öjebyn,1,brand,sv,duckduckgo,-1,,ddg-checked-12-results
+2026-05-10T07:17:51Z,Stations Hotellet Piteå,1,brand,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:17:54Z,stationshotellet.com,1,brand,any,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:17:56Z,boende Öjebyn,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:17:58Z,boende Piteå,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:00Z,lägenhet Piteå,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:02Z,lägenhet Öjebyn,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:05Z,billig övernattning Piteå,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:07Z,billigt boende Piteå,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:09Z,semesterboende Norrbotten,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:11Z,airbnb Öjebyn,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:13Z,rum att hyra Piteå,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:15Z,stuga Piteå,2,local_sv,sv,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:18Z,accommodation Öjebyn,3,local_en,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:20Z,apartment Piteå,3,local_en,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:22Z,vacation rental Piteå,3,local_en,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:24Z,hotel Öjebyn,3,local_en,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:26Z,Piteå apartment short stay,3,local_en,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:28Z,Pite Havsbad accommodation,4,longtail,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:31Z,northern lights apartment Piteå,4,longtail,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:33Z,Luleå airport apartment rental,4,longtail,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:35Z,midnight sun stay Piteå,4,longtail,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:37Z,Markbygden wind park accommodation,4,longtail,en,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:39Z,appartement Piteå,5,local_other,fr,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T07:18:41Z,Ferienwohnung Piteå,5,local_other,de,duckduckgo,-1,,ddg-no-results-parsed
+2026-05-10T08:52:06Z,Stations Hotellet,1,brand,sv,serper,1,https://stationshotellet.com/sv/,serper-found-pos-1
+2026-05-10T08:52:09Z,Stations Hotellet Öjebyn,1,brand,sv,serper,1,https://stationshotellet.com/sv/,serper-found-pos-1
+2026-05-10T08:52:12Z,Stations Hotellet Piteå,1,brand,sv,serper,1,https://stationshotellet.com/sv/,serper-found-pos-1
+2026-05-10T08:52:16Z,stationshotellet.com,1,brand,any,serper,1,https://stationshotellet.com/sv/,serper-found-pos-1
+2026-05-10T08:52:19Z,boende Öjebyn,2,local_sv,sv,serper,-1,,serper-checked-10-results
+2026-05-10T08:52:22Z,boende Piteå,2,local_sv,sv,serper,-1,,serper-checked-10-results
+2026-05-10T08:52:26Z,lägenhet Piteå,2,local_sv,sv,serper,-1,,serper-checked-10-results
+2026-05-10T08:52:29Z,lägenhet Öjebyn,2,local_sv,sv,serper,-1,,serper-checked-10-results
+2026-05-10T08:52:32Z,billig övernattning Piteå,2,local_sv,sv,serper,-1,,serper-checked-10-results
+2026-05-10T08:52:36Z,billigt boende Piteå,2,local_sv,sv,serper,-1,,serper-checked-10-results
+2026-05-10T08:52:39Z,semesterboende Norrbotten,2,local_sv,sv,serper,-1,,serper-checked-10-results
+2026-05-10T08:52:42Z,airbnb Öjebyn,2,local_sv,sv,serper,-1,,serper-checked-7-results
+2026-05-10T08:52:45Z,rum att hyra Piteå,2,local_sv,sv,serper,-1,,serper-checked-10-results
+2026-05-10T08:52:49Z,stuga Piteå,2,local_sv,sv,serper,-1,,serper-checked-10-results
+2026-05-10T08:52:53Z,accommodation Öjebyn,3,local_en,en,serper,10,https://stationshotellet.com/,serper-found-pos-10
+2026-05-10T08:52:56Z,apartment Piteå,3,local_en,en,serper,-1,,serper-checked-10-results
+2026-05-10T08:53:00Z,vacation rental Piteå,3,local_en,en,serper,-1,,serper-checked-10-results
+2026-05-10T08:53:04Z,hotel Öjebyn,3,local_en,en,serper,-1,,serper-checked-10-results
+2026-05-10T08:53:07Z,Piteå apartment short stay,3,local_en,en,serper,-1,,serper-checked-9-results
+2026-05-10T08:53:10Z,Pite Havsbad accommodation,4,longtail,en,serper,-1,,serper-checked-10-results
+2026-05-10T08:53:13Z,northern lights apartment Piteå,4,longtail,en,serper,-1,,serper-checked-9-results
+2026-05-10T08:53:17Z,Luleå airport apartment rental,4,longtail,en,serper,-1,,serper-checked-9-results
+2026-05-10T08:53:20Z,midnight sun stay Piteå,4,longtail,en,serper,-1,,serper-checked-10-results
+2026-05-10T08:53:23Z,Markbygden wind park accommodation,4,longtail,en,serper,-1,,serper-checked-10-results
+2026-05-10T08:53:26Z,appartement Piteå,5,local_other,fr,serper,-1,,serper-checked-10-results
+2026-05-10T08:53:29Z,Ferienwohnung Piteå,5,local_other,de,serper,-1,,serper-checked-10-results

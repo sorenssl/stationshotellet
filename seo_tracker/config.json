@@ -1,0 +1,43 @@
+{
+  "domain": "stationshotellet.com",
+  "country_code": "se",
+  "language": "sv",
+  "tracked_since": "2026-05-10",
+  "keywords": [
+    {"q": "Stations Hotellet", "tier": 1, "category": "brand", "lang": "sv"},
+    {"q": "Stations Hotellet Öjebyn", "tier": 1, "category": "brand", "lang": "sv"},
+    {"q": "Stations Hotellet Piteå", "tier": 1, "category": "brand", "lang": "sv"},
+    {"q": "stationshotellet.com", "tier": 1, "category": "brand", "lang": "any"},
+
+    {"q": "boende Öjebyn", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "boende Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "lägenhet Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "lägenhet Öjebyn", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "billig övernattning Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "billigt boende Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "semesterboende Norrbotten", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "airbnb Öjebyn", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "rum att hyra Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "stuga Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
+
+    {"q": "accommodation Öjebyn", "tier": 3, "category": "local_en", "lang": "en"},
+    {"q": "apartment Piteå", "tier": 3, "category": "local_en", "lang": "en"},
+    {"q": "vacation rental Piteå", "tier": 3, "category": "local_en", "lang": "en"},
+    {"q": "hotel Öjebyn", "tier": 3, "category": "local_en", "lang": "en"},
+    {"q": "Piteå apartment short stay", "tier": 3, "category": "local_en", "lang": "en"},
+
+    {"q": "Pite Havsbad accommodation", "tier": 4, "category": "longtail", "lang": "en"},
+    {"q": "northern lights apartment Piteå", "tier": 4, "category": "longtail", "lang": "en"},
+    {"q": "Luleå airport apartment rental", "tier": 4, "category": "longtail", "lang": "en"},
+    {"q": "midnight sun stay Piteå", "tier": 4, "category": "longtail", "lang": "en"},
+    {"q": "Markbygden wind park accommodation", "tier": 4, "category": "longtail", "lang": "en"},
+
+    {"q": "appartement Piteå", "tier": 5, "category": "local_other", "lang": "fr"},
+    {"q": "Ferienwohnung Piteå", "tier": 5, "category": "local_other", "lang": "de"}
+  ],
+  "_notes": {
+    "tier_meaning": "1=brand (must rank #1), 2=Swedish local intent, 3=English local intent, 4=long-tail activity-based, 5=other languages",
+    "rank_top_n": 50,
+    "providers": "duckduckgo (free, proxy for Google) | manual (incognito Google) | serper (Serper.dev API, set SERPER_API_KEY env var)"
+  }
+}

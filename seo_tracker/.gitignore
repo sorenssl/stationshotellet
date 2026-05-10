@@ -1,0 +1,11 @@
+# Secrets — never commit
+serper_config.json
+telegram_config.json
+
+# Generated artifacts — regenerated on each run
+report.html
+weekly_run.log
+
+# Python cache
+__pycache__/
+*.pyc
