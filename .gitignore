@@ -34,3 +34,5 @@ images/*.JPG
 images/*.PNG
 !images/thumb/
 !images/full/
+# …but DO track the social-share card (og:image) — added 2026-07-14
+!images/og-image-aurora.jpg
