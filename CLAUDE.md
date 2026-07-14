@@ -64,6 +64,15 @@ Hosted via GitHub Pages. Push to `main` branch, then enable Pages in repo Settin
 - [x] **Hero copy updated** with "lowest rates in Öjebyn" + 990 kr signal
 - [x] **Image optimization (2026-05-09)**: WebP versions of all 28 images generated alongside JPEGs. Every `<img>` wrapped in `<picture>` with WebP source + JPEG fallback. Hero CSS uses `image-set()`. hosts.png (434 KB) replaced by hosts.jpg + hosts.webp (27 KB WebP, 49 KB JPEG fallback). **First-paint weight: 658 KB → 146 KB (78% reduction)**. Full gallery: 1.18 MB → 525 KB (55%). Helper scripts: `optimize_images.py`, `update_picture_tags.py`.
 - [x] **Cloudflare Web Analytics (2026-05-09)**: privacy-friendly cookie-less analytics live on all 6 language versions. No cookie banner, no GDPR consent paperwork, GDPR-compliant by design. Token: `56268582f31646be956658d1aaefaab9`. Dashboard at https://dash.cloudflare.com/?to=/:account/web-analytics. 30-day rolling retention.
+- [x] **Tourist-SEO + style upgrade (2026-07-14)** — rollback tag `pre-upgrade-2026-07-14`, see `ROLLBACK.md`. Scripts: `upgrade_20260714_{assets,seo_content,style_ux}.py` (one-shot, NOT idempotent). All 6 languages:
+  - Favicon set from SH monogram (`favicon.ico`, 32px PNG, apple-touch-icon) — Google shows favicons in mobile SERPs
+  - Hero + og:image swapped to the real northern-lights exterior photo (matches GBP cover). Hero WebP is 28 KB → faster LCP; also fixed pre-existing bug where `image-set()` dropped the darkening gradient
+  - Titles/descriptions rewritten with tourist keywords (Swedish Lapland / Laponie suédoise / Schwedisch-Lappland / etc.)
+  - Translated pages got the full enriched LodgingBusiness JSON-LD (was EN-only since May) + translated FAQPage schema
+  - New visible FAQ section (6 Q&As: aurora, Pite Havsbad, airport, price, check-in, cancellation), matching schema
+  - **Pite Havsbad distance corrected ~5 km → ~15 km** (5 km was from central Piteå, not from Öjebyn — verified)
+  - Entrance-veranda photo (from Soren's `Airbnb_Entre.jpg`) added to gallery + slideshow; aurora photo added as slide 14 (hero click opens it)
+  - CSS: serif heading stack (matches SH monogram), scroll-margin-top fix (anchors no longer hide behind navbar), `:focus-visible` outlines, `prefers-reduced-motion` support, sticky mobile "Book now" bar (auto-hides at booking form)
 
 ### Open / pending Tony's manual action
 - [ ] **GSC + Bing Webmaster verification** — see SEO_NEXT_STEPS.md (highest leverage right now — site not yet indexed)
@@ -79,7 +88,7 @@ Hosted via GitHub Pages. Push to `main` branch, then enable Pages in repo Settin
 - [ ] **OTA listings (Booking.com / Airbnb)** — see OTA_DISTRIBUTION_ANALYSIS.md. Recommendation: hold for Months 1-3, list Month 4 if direct-book volume insufficient.
 
 ### Optional / future
-- [ ] favicon (32x32 .ico or .png) — not yet referenced in `<head>`
+- [x] favicon — DONE 2026-07-14 (SH monogram: favicon.ico + favicon-32x32.png + apple-touch-icon.png)
 - [ ] YouTube property tour video — embed iframe (signals video to Google)
 - [ ] ImprovMX (free inbound forwarding) + Brevo SMTP for `info@` branding — only when booking volume justifies
 - [ ] Clean up unused Loopia email forwarders (info@, booking@) — orphaned but harmless
