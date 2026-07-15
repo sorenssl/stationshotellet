@@ -28,13 +28,14 @@ Open `index.html` directly in a browser. No build step required.
 
 Hosted via GitHub Pages. Push to `main` branch, then enable Pages in repo Settings → Pages → Source: "Deploy from a branch" → `main` / `/ (root)`.
 
-## Pricing (updated 2026-07-15 by Soren — raised weekly/monthly; nightly unchanged)
+## Pricing (updated 2026-07-15 by Soren — final ladder: ~10% / ~20% off nightly)
 
 - **Nightly**: 990 kr (whole apartment, up to 5 guests, all-inclusive — cleaning, linens, Wi-Fi, parking)
-- **Weekly**: 6,500 kr (929 kr/night — 6% off vs 7×990). Soren first wanted 8,000 kr but that exceeds 7×990=6,930 — chose 6,500 to keep the "save vs nightly" claim honest.
-- **Monthly**: 19,000 kr (633 kr/night — 36% discount, weekly cleaning included)
-- 2026-07-15 market check: Piteå hotels 1,224–1,912 kr/night (Kust, Stadshotell), avg ~1,100 kr, hostel floor ~590–700 kr → 990 kr whole-apartment stays cheapest real accommodation; do not raise above ~1,010 or the "lowest rates in Öjebyn" claim breaks (Öjebyn comp: 1,013 kr).
-- Previous (2026-05-09 launch pricing): weekly 5,500 / monthly 14,000. Update script: `update_prices_20260715.py` (one-shot).
+- **Weekly**: 6,200 kr (886 kr/night — 10.5% off vs 7×990 = 6,930; cards say "save 10%")
+- **Monthly**: 23,800 kr (793 kr/night — 19.9% off vs 30×990 = 29,700; cards say "save 20%"; weekly cleaning included)
+- Ladder logic (Soren 2026-07-15): clean ~10%/~20% volume discounts. He first wanted weekly 8,000 but that exceeds 7×990 — savings claims must stay honest.
+- 2026-07-15 market check: Piteå hotels 1,224–1,912 kr/night (Kust, Stadshotell), avg ~1,100 kr, hostel floor ~590–700 kr → 990 kr whole-apartment is the cheapest real accommodation; do not raise nightly above ~1,010 or the "lowest rates in Öjebyn" claim breaks (Öjebyn comp: 1,013 kr).
+- History: launch 2026-05-09: 5,500/14,000 → 2026-07-15 morning: 6,500/19,000 (`update_prices_20260715.py`) → 2026-07-15 final: 6,200/23,800 (`update_prices_20260715b.py`). Scripts are one-shot.
 - **Cancellation tiers**: 1-2 nights flexible (3 days), weekly moderate (7 days), monthly strict (1-month deposit, refundable 30+ days out)
 - **Strategy**: cheapest 2BR whole-apartment within 30 km radius. Closest direct comp ("Centralt belägen villa i Öjebyn") is 1,013 kr/night with cleaning extra; we're 990 kr all-inclusive. Piteå-area 2BR median is 1,420 kr.
 - **Source documents**: `OTA_DISTRIBUTION_ANALYSIS.md` (whether to list on Booking/Airbnb) + `SEO_NEXT_STEPS.md` (manual actions for Tony — GSC, GBP, backlinks)
