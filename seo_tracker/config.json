@@ -14,6 +14,7 @@
     {"q": "lägenhet Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
     {"q": "lägenhet Öjebyn", "tier": 2, "category": "local_sv", "lang": "sv"},
     {"q": "billig övernattning Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
+    {"q": "övernattning Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
     {"q": "billigt boende Piteå", "tier": 2, "category": "local_sv", "lang": "sv"},
     {"q": "semesterboende Norrbotten", "tier": 2, "category": "local_sv", "lang": "sv"},
     {"q": "airbnb Öjebyn", "tier": 2, "category": "local_sv", "lang": "sv"},
@@ -33,7 +34,9 @@
     {"q": "Markbygden wind park accommodation", "tier": 4, "category": "longtail", "lang": "en"},
 
     {"q": "appartement Piteå", "tier": 5, "category": "local_other", "lang": "fr"},
-    {"q": "Ferienwohnung Piteå", "tier": 5, "category": "local_other", "lang": "de"}
+    {"q": "Ferienwohnung Piteå", "tier": 5, "category": "local_other", "lang": "de"},
+    {"q": "Übernachtung Piteå", "tier": 5, "category": "local_other", "lang": "de"},
+    {"q": "nocleg Piteå", "tier": 5, "category": "local_other", "lang": "pl"}
   ],
   "_notes": {
     "tier_meaning": "1=brand (must rank #1), 2=Swedish local intent, 3=English local intent, 4=long-tail activity-based, 5=other languages",
