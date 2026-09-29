@@ -20,6 +20,15 @@ Single `index.html` file with inline CSS and JS. No build tools, no frameworks, 
 - **Email**: `posetivemind67@gmail.com` used throughout — direct Gmail, no forwarding chain. Decided 2026-05-03 after Loopia→Gmail forwarding hit `554 Relay access denied` (industry-known problem). Volume is zero, simplicity wins. Can upgrade later to ImprovMX (free) + Brevo SMTP (free) for `info@` branding when bookings justify it.
 - **Open Graph**: og:url + og:image + twitter:card meta tags set (line 12-15) — share preview will show `kitchen-dining-wide.jpg` once site is live.
 
+## Before you solve a problem
+
+Check `C:\Users\skibi\.claude\knowledge\` — someone may already have solved it.
+For this site especially: `knowledge/website/CHECKLIST.md` (build/audit rules)
+and `knowledge/website/audit.mjs` (our own grader — run it after every
+significant deploy). **Learned something that is NOT specific to this site?**
+Write it THERE, not only in your memory. The sorting rule is in that folder's
+README. *(Tony's go-ahead 2026-08-04.)*
+
 ## Development
 
 Open `index.html` directly in a browser. No build step required.
