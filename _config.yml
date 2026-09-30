@@ -1,0 +1,15 @@
+# GitHub Pages (Jekyll) build config — added 2026-09-30.
+# Purpose: keep internal working files OFF the public website. Before this file,
+# stationshotellet.com/CLAUDE.md, /SEO_NEXT_STEPS.md, /seo_tracker/history.csv etc.
+# were all served to anyone. They stay in the repo, only the site build skips them.
+# NOTE: the GitHub repo itself is still public — this hides the files from the
+# domain, not from github.com. Moving hosting to Cloudflare is planned.
+exclude:
+  - "*.md"
+  - "*.py"
+  - "*.ps1"
+  - "*.bat"
+  - "*.json"
+  - seo_tracker
+  - branding
+  - .gitignore
