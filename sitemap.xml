@@ -85,4 +85,58 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://stationshotellet.com/sv/langtidsboende-pitea/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://stationshotellet.com/sv/langtidsboende-pitea/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stationshotellet.com/long-stay-pitea/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stationshotellet.com/long-stay-pitea/" />
+    <lastmod>2026-10-01T09:00:00Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stationshotellet.com/long-stay-pitea/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://stationshotellet.com/sv/langtidsboende-pitea/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stationshotellet.com/long-stay-pitea/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stationshotellet.com/long-stay-pitea/" />
+    <lastmod>2026-10-01T09:00:00Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stationshotellet.com/sv/norrsken-pitea/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://stationshotellet.com/sv/norrsken-pitea/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stationshotellet.com/northern-lights-pitea/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stationshotellet.com/northern-lights-pitea/" />
+    <lastmod>2026-10-01T09:00:00Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stationshotellet.com/northern-lights-pitea/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://stationshotellet.com/sv/norrsken-pitea/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stationshotellet.com/northern-lights-pitea/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stationshotellet.com/northern-lights-pitea/" />
+    <lastmod>2026-10-01T09:00:00Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stationshotellet.com/sv/boende-pitea-summer-games/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://stationshotellet.com/sv/boende-pitea-summer-games/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stationshotellet.com/pitea-summer-games-accommodation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stationshotellet.com/pitea-summer-games-accommodation/" />
+    <lastmod>2026-10-01T09:00:00Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stationshotellet.com/pitea-summer-games-accommodation/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://stationshotellet.com/sv/boende-pitea-summer-games/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stationshotellet.com/pitea-summer-games-accommodation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stationshotellet.com/pitea-summer-games-accommodation/" />
+    <lastmod>2026-10-01T09:00:00Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
