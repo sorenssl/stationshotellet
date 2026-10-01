@@ -1,0 +1,20 @@
+// Cloudflare-inställningar för stationshotellet.com. Publicera ALLTID via:
+//   node cloudflare/publicera.mjs            (förhandsadressen *.workers.dev, noindex)
+//   node cloudflare/publicera.mjs --skarpt   (riktiga domänen — kräver "routes" nedan)
+// Konto: vitavaror@gmail.com (Tonys ja 2026-10-01 10:26). Plan: C:\Git\Stations_Hotel_Pitea\CLOUDFLARE_FLYTT.md
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "stationshotellet",
+  "main": "./worker.mjs",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    // Byggs av bygg.mjs ur det som är COMMITTAT, bara sajtens filer — aldrig hela repot.
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Allt går via Workern: adresslogiken (som GitHub), rubrikerna och förhandsskölden.
+    "run_worker_first": true,
+    "not_found_handling": "none",
+    "html_handling": "none"
+  },
+  "observability": { "enabled": true }
+}
