@@ -36,7 +36,17 @@
     {"q": "appartement Piteå", "tier": 5, "category": "local_other", "lang": "fr"},
     {"q": "Ferienwohnung Piteå", "tier": 5, "category": "local_other", "lang": "de"},
     {"q": "Übernachtung Piteå", "tier": 5, "category": "local_other", "lang": "de"},
-    {"q": "nocleg Piteå", "tier": 5, "category": "local_other", "lang": "pl"}
+    {"q": "nocleg Piteå", "tier": 5, "category": "local_other", "lang": "pl"},
+
+    {"q": "långtidsboende Piteå", "tier": 2, "category": "local_sv", "lang": "sv", "added": "2026-10-01"},
+    {"q": "månadsboende Piteå", "tier": 2, "category": "local_sv", "lang": "sv", "added": "2026-10-01"},
+    {"q": "möblerad lägenhet Piteå", "tier": 2, "category": "local_sv", "lang": "sv", "added": "2026-10-01"},
+    {"q": "personalboende Piteå", "tier": 2, "category": "local_sv", "lang": "sv", "added": "2026-10-01"},
+    {"q": "norrsken Piteå", "tier": 4, "category": "longtail", "lang": "sv", "added": "2026-10-01"},
+    {"q": "boende Piteå Summer Games", "tier": 4, "category": "longtail", "lang": "sv", "added": "2026-10-01"},
+    {"q": "northern lights Piteå", "tier": 4, "category": "longtail", "lang": "en", "added": "2026-10-01"},
+    {"q": "Piteå Summer Games accommodation", "tier": 4, "category": "longtail", "lang": "en", "added": "2026-10-01"},
+    {"q": "long stay accommodation Piteå", "tier": 4, "category": "longtail", "lang": "en", "added": "2026-10-01"}
   ],
   "_notes": {
     "tier_meaning": "1=brand (must rank #1), 2=Swedish local intent, 3=English local intent, 4=long-tail activity-based, 5=other languages",
