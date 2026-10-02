@@ -16,5 +16,11 @@
     "not_found_handling": "none",
     "html_handling": "none"
   },
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // Skarpt sedan 2026-10-02 (steg 7). Båda namnen — en Worker på apex får inte www-trafiken.
+  // wrangler ersätter GitHub-posterna (A x4, www CNAME) själv när den körs utan terminal (override_existing_dns_record).
+  "routes": [
+    { "pattern": "stationshotellet.com", "custom_domain": true },
+    { "pattern": "www.stationshotellet.com", "custom_domain": true }
+  ]
 }
