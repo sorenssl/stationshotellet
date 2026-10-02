@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Status**: 🟢 LIVE at https://stationshotellet.com (launched 2026-05-03).
 **Domain**: registered at Loopia. **Hosting**: GitHub Pages (free, HTTPS via Let's Encrypt). **DNS**: LoopiaDNS (~12,49 kr/mo).
-**Email**: direct to `posetivemind67@gmail.com` — no custom-domain mailbox or forwarding (chose simplicity; can upgrade later when bookings justify it).
+**Email**: `info@stationshotellet.com` → Cloudflare Email Routing → Tonys Gmail (since 2026-10-02; Friday set it up 14:05, Tony confirmed a test mail arrived 17:23). PayPal lines still show the Gmail address — that is the PayPal account, Tonys call.
 
 ## Architecture
 
@@ -17,7 +17,7 @@ Single `index.html` file with inline CSS and JS. No build tools, no frameworks, 
 - **Booking form**: Uses Formspree — form action URL still needs a real Formspree form ID (line 1044)
 - **Map**: Google Maps iframe pointed at `Västra Järnvägsgatan 5, 943 31 Öjebyn` (line 1140, address-based query format — no API key needed)
 - **Photos**: All 14 photos in `images/full/` and `images/thumb/` are wired into gallery (11 items) and slideshow (14 slides). Hosts photo at `images/thumb/hosts.png`.
-- **Email**: `posetivemind67@gmail.com` used throughout — direct Gmail, no forwarding chain. Decided 2026-05-03 after Loopia→Gmail forwarding hit `554 Relay access denied` (industry-known problem). Volume is zero, simplicity wins. Can upgrade later to ImprovMX (free) + Brevo SMTP (free) for `info@` branding when bookings justify it.
+- **Email**: `info@` on the site since 2026-10-02 (receive only, forwarded by Cloudflare Email Routing; Loopia MX removed). Earlier (2026-05-03) the site used the Gmail directly after Loopia→Gmail forwarding hit `554 Relay access denied`. Sending AS info@ is not set up yet (planned: Gmail "send as" via Brevo, Friday).
 - **Open Graph**: og:url + og:image + twitter:card meta tags set (line 12-15) — share preview will show `kitchen-dining-wide.jpg` once site is live.
 
 ## Before you solve a problem
@@ -60,7 +60,7 @@ Hosted via GitHub Pages. Push to `main` branch, then enable Pages in repo Settin
 - [x] TLS certificate provisioned (Let's Encrypt via GitHub)
 - [x] Enforce HTTPS enabled
 - [x] Formspree form ID `xkoyoery` wired (booking form delivers to Gmail)
-- [x] Email: posetivemind67@gmail.com used directly (no forwarding chain)
+- [x] Email: info@stationshotellet.com via Cloudflare Email Routing (2026-10-02); PayPal keeps the Gmail address
 - [x] Schema.org LodgingBusiness + geo coordinates + amenityFeature
 - [x] **Enriched JSON-LD** (2026-05-09): numberOfRooms, occupancy, makesOffer (3 tiers), containsPlace Apartment
 - [x] **FAQPage JSON-LD** (2026-05-09): 7 Q&A entries — drives FAQ rich snippets in SERP
