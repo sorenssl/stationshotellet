@@ -30,6 +30,10 @@ export default {
       // Utan includeSubDomains: Loopias webmail/autodiscover-underdomäner ska inte tvingas (Edwin 2026-10-01).
       ut.headers.set('Strict-Transport-Security', 'max-age=31536000');
     }
+    // GitHub gav charset=utf-8 på text-svar; Cloudflares asset-server utelämnar det på text/plain (llms.txt
+    // har å/ö → "PiteÃ¥"). Vision mätte det 2026-10-02.
+    const ct = ut.headers.get('content-type') || '';
+    if (/^text\/(html|plain|css)/.test(ct) && !/charset/i.test(ct)) ut.headers.set('content-type', `${ct}; charset=utf-8`);
     ut.headers.set('X-Content-Type-Options', 'nosniff');
     ut.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
     return ut;

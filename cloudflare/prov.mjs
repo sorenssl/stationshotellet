@@ -81,6 +81,8 @@ const h = (n) => start.headers.get(n) || '';
 rad(h('x-content-type-options') === 'nosniff', `X-Content-Type-Options: ${h('x-content-type-options') || 'saknas'}`);
 rad(h('referrer-policy') === 'strict-origin-when-cross-origin', `Referrer-Policy: ${h('referrer-policy') || 'saknas'}`);
 rad(/text\/html/.test(h('content-type')), `Content-Type: ${h('content-type')}`);
+const llms = await hämta(`${BAS}/llms.txt`);
+rad(/charset=utf-8/i.test(llms.headers.get('content-type') || ''), `llms.txt Content-Type: ${llms.headers.get('content-type') || 'saknas'}`);
 if (förhand) {
   rad(/noindex/.test(h('x-robots-tag')), `förhandsskölden X-Robots-Tag: ${h('x-robots-tag') || 'SAKNAS'}`);
 } else {
